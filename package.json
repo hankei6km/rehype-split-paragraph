@@ -29,6 +29,7 @@
     "csb:test": "npm test -- --runInBand --watchAll"
   },
   "dependencies": {
+    "rehype-remove-empty-paragraph": "^0.1.2",
     "unified": "^9.2.1"
   },
   "devDependencies": {

@@ -47,6 +47,40 @@ describe('splitParagraphTransformer()', () => {
       '<p>test1<img src="image1">test2</p>'
     );
     expect(await f('<p>test3<br><img src="image2">test4</p>')).toEqual(
+      '<p>test3</p><p><img src="image2">test4</p>'
+    );
+    expect(await f('<p>test5<img src="image3"><br>test6</p>')).toEqual(
+      '<p>test5<img src="image3"></p><p>test6</p>'
+    );
+    expect(await f('<p>test7<br><img src="image4"><br>test8</p>')).toEqual(
+      '<p>test7</p><p><img src="image4"></p><p>test8</p>'
+    );
+  });
+});
+
+describe('splitParagraphTransformer() without cleanParagraph', () => {
+  const f = async (html: string): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      unified()
+        .use(rehypeParse, { fragment: true })
+        .use(rehypeSplitParagraph, {
+          cleanParagraph: false
+        })
+        .use(stringify)
+        .freeze()
+        .process(html, (err, file) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(String(file));
+        });
+    });
+  };
+  it('should split paragraph without removing blnak lines', async () => {
+    expect(await f('<p>test1<img src="image1">test2</p>')).toEqual(
+      '<p>test1<img src="image1">test2</p>'
+    );
+    expect(await f('<p>test3<br><img src="image2">test4</p>')).toEqual(
       '<p>test3<br></p><p><img src="image2">test4</p>'
     );
     expect(await f('<p>test5<img src="image3"><br>test6</p>')).toEqual(
