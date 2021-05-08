@@ -5,11 +5,11 @@ import {
   hastRemoveEmptyParagraph
 } from 'rehype-remove-empty-paragraph';
 
-type RehypeSplitParagraphOptions = {
+export type RehypeSplitParagraphOptions = {
   cleanParagraph?: boolean;
 };
 
-function hastSplitParagraphByBr(tree: Root): void {
+export function hastSplitParagraphByBr(tree: Root): void {
   const children: Root['children'] = [];
   tree.children.forEach((c) => {
     if (c.type === 'element' && c.tagName === 'p') {
@@ -41,7 +41,7 @@ function hastSplitParagraphByBr(tree: Root): void {
   tree.children = children;
 }
 
-function hastSplitParagraphByImgAndBr(tree: Root): void {
+export function hastSplitParagraphByImgAndBr(tree: Root): void {
   const children: Root['children'] = [];
   tree.children.forEach((c) => {
     if (
