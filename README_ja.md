@@ -1,6 +1,6 @@
 # rehype-split-paragraph
 
-[rehype](https://github.com/rehypejs/rehype) plugin that split `<p>` by `<br>`s / `<img><br>` / `<br><img>`.
+<p>` を `<br>` の連続 / `<img><br>` / `<br><img>` で分割する [rehype](https://github.com/rehypejs/rehype のプラグイン。
 
 ## Install
 
@@ -45,13 +45,13 @@ yield:
 
 ### `rehypeSplitParagraph([options])`
 
-Split `<p>` by `<br>`s / `<img><br>` / `<br><img>`.
-Paragraph is only supported `root / paragraph` hierarchy.
+<p>` を `<br>` の連続 / `<img><br>` / `<br><img>` で分割する。
+Paragraph は `root / paragraph` 階層のみサポートしている.
 
 #### options.cleanParagraph
 
-- Trim leading/trailing `<br>` in Paragraph.
-- Remove empty Paragraph.
+- Paragraph 内の先頭と末尾の `<br>` を取り除く
+- 空の Paragraph を削除する
 
 ## License
 

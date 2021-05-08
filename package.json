@@ -1,36 +1,49 @@
 {
-  "name": "my-starter-ts-npm-cli-and-lib",
-  "version": "0.1.2-0",
-  "description": "Typescript で CLI とライブラリの npm パッケージを作成するためのスターター。",
+  "name": "rehype-split-paragraph",
+  "version": "0.1.1-0",
+  "description": "rehype plugin that split <p> by <br>s / <img><br> / <br><img>",
   "license": "MIT",
-  "keywords": [],
+  "author": "hankei6km <hankei6km@gmail.com> (https://github.com/hankei6km)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hankei6km/rehype-split-paragraph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hankei6km/rehype-split-paragraph/issues"
+  },
+  "keywords": [
+    "rehype",
+    "plugin",
+    "split"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "bin": {
-    "count": "dist/main.js"
-  },
   "scripts": {
-    "start": "tsc && node dist/main.js",
-    "start:watch": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
     "build": "tsc",
     "test": "jest",
     "clean": "rm dist/*",
     "upgrade-interactive": "npm-check --update",
-    "csb:test": "npm test -- --runInBand --watchAll"
+    "csb:test": "npm test -- --runInBand --watchAll",
+    "example": "tsc && ts-node example/example.ts"
   },
   "dependencies": {
-    "yargs": "^16.2.0"
+    "rehype-remove-empty-paragraph": "^0.1.2",
+    "unified": "^9.2.1"
   },
   "devDependencies": {
+    "@types/hast": "^2.3.1",
     "@types/jest": "^26.0.23",
     "@types/node": "^14.14.28",
+    "@types/unist": "^2.0.3",
     "@types/yargs": "^16.0.1",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "npm-check": "^5.9.2",
+    "rehype-parse": "^7.0.1",
+    "rehype-stringify": "^8.0.0",
     "ts-jest": "^26.5.5",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
