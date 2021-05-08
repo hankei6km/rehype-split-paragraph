@@ -1,14 +1,14 @@
 import unified from 'unified';
 import rehypeParse from 'rehype-parse';
 import stringify from 'rehype-stringify';
-import { splitParagraphTransformer } from './split';
+import rehypeSplitParagraph from '.';
 
 describe('splitParagraphTransformer()', () => {
   const f = async (html: string): Promise<string> => {
     return new Promise((resolve, reject) => {
       unified()
         .use(rehypeParse, { fragment: true })
-        .use(splitParagraphTransformer)
+        .use(rehypeSplitParagraph)
         .use(stringify)
         .freeze()
         .process(html, (err, file) => {

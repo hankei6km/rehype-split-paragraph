@@ -1,7 +1,7 @@
 import { Transformer } from 'unified';
 import { Node } from 'hast';
 
-export function splitParagraphTransformer(): Transformer {
+export function rehypeSplitParagraph(): Transformer {
   // 最上位の paragraph のみ対象。リストや引用、ネストは扱わない。
   return function transformer(tree: Node): void {
     // 連続 br
