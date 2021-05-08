@@ -21,21 +21,14 @@
   "files": [
     "dist"
   ],
-  "bin": {
-    "count": "dist/main.js"
-  },
   "scripts": {
-    "start": "tsc && node dist/main.js",
-    "start:watch": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
     "build": "tsc",
     "test": "jest",
     "clean": "rm dist/*",
     "upgrade-interactive": "npm-check --update",
     "csb:test": "npm test -- --runInBand --watchAll"
   },
-  "dependencies": {
-    "yargs": "^16.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^14.14.28",
