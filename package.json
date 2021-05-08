@@ -1,9 +1,21 @@
 {
-  "name": "my-starter-ts-npm-cli-and-lib",
-  "version": "0.1.2-0",
-  "description": "Typescript で CLI とライブラリの npm パッケージを作成するためのスターター。",
+  "name": "rehype-split-paragraph",
+  "version": "0.1.0",
+  "description": "rehype plugin that split <p> by <br>s / <img><br> / <br><img>",
   "license": "MIT",
-  "keywords": [],
+  "author": "hankei6km <hankei6km@gmail.com> (https://github.com/hankei6km)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hankei6km/rehype-split-paragraph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hankei6km/rehype-split-paragraph/issues"
+  },
+  "keywords": [
+    "rehype",
+    "plugin",
+    "split"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
