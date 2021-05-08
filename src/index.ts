@@ -1,2 +1,2 @@
-import { rehypeSplitParagraph } from './split';
+import rehypeSplitParagraph from './split';
 export default rehypeSplitParagraph;

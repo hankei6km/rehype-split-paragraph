@@ -26,7 +26,8 @@
     "test": "jest",
     "clean": "rm dist/*",
     "upgrade-interactive": "npm-check --update",
-    "csb:test": "npm test -- --runInBand --watchAll"
+    "csb:test": "npm test -- --runInBand --watchAll",
+    "example": "tsc && ts-node example/example.ts"
   },
   "dependencies": {
     "rehype-remove-empty-paragraph": "^0.1.2",

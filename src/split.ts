@@ -1,4 +1,4 @@
-import { Transformer } from 'unified';
+import { Plugin, Transformer } from 'unified';
 import { Node, Root } from 'hast';
 import {
   hastTrimBr,
@@ -95,7 +95,7 @@ function hastSplitParagraphByImgAndBr(tree: Root): void {
   tree.children = children;
 }
 
-export function rehypeSplitParagraph(
+const rehypeSplitParagraph: Plugin = function (
   { cleanParagraph }: RehypeSplitParagraphOptions = {
     cleanParagraph: true
   }
@@ -113,4 +113,6 @@ export function rehypeSplitParagraph(
       }
     }
   };
-}
+};
+
+export default rehypeSplitParagraph;
