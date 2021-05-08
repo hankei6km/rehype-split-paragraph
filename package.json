@@ -1,6 +1,6 @@
 {
   "name": "rehype-split-paragraph",
-  "version": "0.1.1-0",
+  "version": "0.1.1",
   "description": "rehype plugin that split <p> by <br>s / <img><br> / <br><img>",
   "license": "MIT",
   "author": "hankei6km <hankei6km@gmail.com> (https://github.com/hankei6km)",
