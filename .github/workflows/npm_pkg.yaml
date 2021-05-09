@@ -14,7 +14,11 @@ jobs:
     steps:
     # prerelease のような文字が含まれていたら失敗させる.
     - name: Check name and tag_name
-      if: ${{ contains(github.event.release.name, 'p') || contains(github.event.release.tag_name, 'p') || contains(github.event.release.name, '-') || contains(github.event.release.tag_name, '-') }}
+      if: >-
+        ${{ contains(github.event.release.name, 'p') ||
+        contains(github.event.release.tag_name, 'p') ||
+        contains(github.event.release.name, '-') ||
+        contains(github.event.release.tag_name, '-') }}
       run: |
         echo 'name: ${{ github.event.release.name }}'
         echo 'tag_name: ${{ github.event.release.tag_name }}'
