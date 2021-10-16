@@ -2,7 +2,7 @@ import rehypeSplitParagraph, {
   RehypeSplitParagraphOptions,
   hastSplitParagraphByBr,
   hastSplitParagraphByImgAndBr
-} from './split';
+} from './split.js';
 export default rehypeSplitParagraph;
 export {
   RehypeSplitParagraphOptions,
