@@ -16,7 +16,8 @@
     "plugin",
     "split"
   ],
-  "exports": "./index.js",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
   "files": [
