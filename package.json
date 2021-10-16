@@ -35,7 +35,7 @@
     "example": "tsc && ts-node example/example.ts"
   },
   "dependencies": {
-    "rehype-remove-empty-paragraph": "^0.2.3",
+    "rehype-remove-empty-paragraph": "^0.2.4",
     "unified": "^10.1.0"
   },
   "devDependencies": {
