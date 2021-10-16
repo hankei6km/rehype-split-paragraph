@@ -1,7 +1,7 @@
-import unified from 'unified';
+import { unified } from 'unified';
 import rehypeParse from 'rehype-parse';
 import stringify from 'rehype-stringify';
-import rehypeSplitParagraph from '.';
+import rehypeSplitParagraph from './split.js';
 
 describe('splitParagraphTransformer()', () => {
   const f = async (html: string): Promise<string> => {
@@ -91,3 +91,5 @@ describe('splitParagraphTransformer() without cleanParagraph', () => {
     );
   });
 });
+
+export {};

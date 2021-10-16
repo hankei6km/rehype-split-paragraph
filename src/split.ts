@@ -56,11 +56,8 @@ export function hastSplitParagraphByImgAndBr(tree: Root): void {
           cc.tagName === 'img' &&
           Array.isArray(c.children)
         ) {
-          if (
-            c.children[i - 1] &&
-            c.children[i - 1].type === 'element' &&
-            c.children[i - 1].tagName === 'br'
-          ) {
+          const prevCC = c.children[i - 1];
+          if (prevCC && prevCC.type === 'element' && prevCC.tagName === 'br') {
             children.push({ ...c, children: pool } as Root['children'][0]); // <br> が残るが他の transformer で除去している
             pool = [];
             pool.push(cc);
@@ -72,11 +69,8 @@ export function hastSplitParagraphByImgAndBr(tree: Root): void {
           cc.tagName === 'br' &&
           Array.isArray(c.children)
         ) {
-          if (
-            c.children[i - 1] &&
-            c.children[i - 1].type === 'element' &&
-            c.children[i - 1].tagName === 'img'
-          ) {
+          const prevCC = c.children[i - 1];
+          if (prevCC && prevCC.type === 'element' && prevCC.tagName === 'img') {
             children.push({ ...c, children: pool } as Root['children'][0]); // <br> が残るが他の transformer で除去している
             pool = [];
             pool.push(cc);
@@ -102,7 +96,7 @@ const rehypeSplitParagraph: Plugin = function (
 ): Transformer {
   // 最上位の paragraph のみ対象。リストや引用、ネストは扱わない。
   return function transformer(tree: Node): void {
-    if (tree.type === 'root' && tree.children) {
+    if (tree.type === 'root') {
       // 連続 br
       hastSplitParagraphByBr(tree as Root);
       // img
